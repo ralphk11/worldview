@@ -12,6 +12,7 @@
       ],
       "product": "HLSS30",
       "tracks": [
+        "OrbitTracks_Sentinel-2A_Descending",
         "OrbitTracks_Sentinel-2B_Descending"
       ],
       "daynight": [

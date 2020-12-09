@@ -4,7 +4,7 @@
       "id": "HLS_MGRS_Granule_Grid",
       "title": "MGRS/HLS Grid",
       "subtitle": "MGRS/HLS",
-      "description": "hls/HLS_MGRS_Granule_Grid",
+      "description": "multi-mission/hls/HLS_MGRS_Granule_Grid",
       "tags": "",
       "group": "overlays",
       "layergroup": [

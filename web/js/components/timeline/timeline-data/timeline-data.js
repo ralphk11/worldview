@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { UncontrolledTooltip } from 'reactstrap';
 import moment from 'moment';
+import googleTagManager from 'googleTagManager';
 import {
   isEqual as lodashIsEqual,
 } from 'lodash';
-import {
-  timeScaleOptions,
-} from '../../../modules/date/constants';
+import { timeScaleOptions } from '../../../modules/date/constants';
 import {
   filterProjLayersWithStartDate,
   getMaxLayerEndDates,
 } from '../../../modules/date/util';
+import { toggleCustomContent } from '../../../modules/modal/actions';
 import Scrollbars from '../../util/scrollbar';
 import Switch from '../../util/switch';
+import DataPanelInfo from './info-modal';
 import DataItemList from './data-item-list';
 
 /*
@@ -262,6 +264,37 @@ class TimelineData extends Component {
     }
   }
 
+  stopPropagation = (e) => {
+    e.nativeEvent.stopImmediatePropagation();
+    e.stopPropagation();
+    e.preventDefault();
+  }
+
+  /**
+  * @desc render info button for data panel coverage info modal
+  * @returns {DOM Object}
+  */
+  renderInfoButton = () => {
+    const { onInfoClick } = this.props;
+    const layerInfoBtnId = 'data-panel-info-button';
+    const layerInfoBtnTitle = 'Data Coverage Panel Information';
+
+    return (
+      <a
+        id={layerInfoBtnId}
+        aria-label={layerInfoBtnTitle}
+        className={layerInfoBtnId}
+        onMouseDown={this.stopPropagation}
+        onClick={() => onInfoClick()}
+      >
+        <UncontrolledTooltip placement="top" target={layerInfoBtnId}>
+          {layerInfoBtnTitle}
+        </UncontrolledTooltip>
+        <FontAwesomeIcon icon="info" className="data-panel-info-button-icon" />
+      </a>
+    );
+  }
+
   render() {
     const {
       appNow,
@@ -337,6 +370,7 @@ class TimelineData extends Component {
           >
             <header className="timeline-data-panel-header">
               <h3 className="timeline-data-panel-header-title">LAYER COVERAGE</h3>
+              {this.renderInfoButton()}
               <Switch
                 active={shouldIncludeHiddenLayers}
                 border
@@ -398,6 +432,23 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
+  onInfoClick: () => {
+    const key = 'DATA_PANEL_INFO_MODAL';
+    googleTagManager.pushEvent({
+      event: 'data_panel_info',
+    });
+    dispatch(
+      toggleCustomContent(key, {
+        headerText: 'Data Coverage Panel',
+        backdrop: false,
+        size: 'lg',
+        bodyComponent: DataPanelInfo,
+        modalClassName: ' data-panel-info-modal',
+        wrapClassName: 'clickable-behind-modal',
+        desktopOnly: true,
+      }),
+    );
+  },
 });
 
 TimelineData.propTypes = {
@@ -409,6 +460,7 @@ TimelineData.propTypes = {
   hoveredLayer: PropTypes.string,
   isDataCoveragePanelOpen: PropTypes.bool,
   isProductPickerOpen: PropTypes.bool,
+  onInfoClick: PropTypes.func,
   parentOffset: PropTypes.number,
   positionTransformX: PropTypes.number,
   projection: PropTypes.string,

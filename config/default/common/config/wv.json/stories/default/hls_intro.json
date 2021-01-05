@@ -133,7 +133,7 @@
             "element": "",
             "action": ""
           },
-          "stepLink": "v=-98.79554961173093,35.54648790283309,-98.53709624259031,35.668920632464335&t=2020-09-29-T16%3A46%3A06Z&t1=2020-10-16-T16%3A46%3A06Z&l=Reference_Labels(hidden),Reference_Features(hidden),Coastlines(hidden),HLS_S30_Nadir_BRDF_Adjusted_Reflectance_v1.5_STD,VIIRS_NOAA20_CorrectedReflectance_TrueColor(hidden),VIIRS_SNPP_CorrectedReflectance_TrueColor(hidden),MODIS_Aqua_CorrectedReflectance_TrueColor(hidden),MODIS_Terra_CorrectedReflectance_TrueColor&l1=Reference_Labels(hidden),Reference_Features(hidden),Coastlines(hidden),HLS_S30_Nadir_BRDF_Adjusted_Reflectance_v1.5_STD,VIIRS_NOAA20_CorrectedReflectance_TrueColor(hidden),VIIRS_SNPP_CorrectedReflectance_TrueColor(hidden),MODIS_Aqua_CorrectedReflectance_TrueColor(hidden),MODIS_Terra_CorrectedReflectance_TrueColor&ca=false&cv=53"
+          "stepLink": "v=-98.79554961173093,35.54648790283309,-98.53709624259031,35.668920632464335&t=2020-09-29-T16%3A46%3A06Z&t1=2020-10-16-T16%3A46%3A06Z&ics=true&ici=3&icd=5&l=Reference_Labels(hidden),Reference_Features(hidden),Coastlines(hidden),HLS_S30_Nadir_BRDF_Adjusted_Reflectance_v1.5_STD,VIIRS_NOAA20_CorrectedReflectance_TrueColor(hidden),VIIRS_SNPP_CorrectedReflectance_TrueColor(hidden),MODIS_Aqua_CorrectedReflectance_TrueColor(hidden),MODIS_Terra_CorrectedReflectance_TrueColor(hidden)&l1=Reference_Labels(hidden),Reference_Features(hidden),Coastlines(hidden),HLS_S30_Nadir_BRDF_Adjusted_Reflectance_v1.5_STD,VIIRS_NOAA20_CorrectedReflectance_TrueColor(hidden),VIIRS_SNPP_CorrectedReflectance_TrueColor(hidden),MODIS_Aqua_CorrectedReflectance_TrueColor(hidden),MODIS_Terra_CorrectedReflectance_TrueColor(hidden)&ca=false&cv=53"
         }
         ,
         {

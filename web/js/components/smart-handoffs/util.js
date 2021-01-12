@@ -14,12 +14,12 @@ export default function openEarthDataSearch(proj, dateSelection, selectedLayer, 
     geographic: '0.0!-180.0!0!1!0!0,2',
     antarctic: '-90!180!0!2!0!0',
   };
-  const { conceptId, daynight } = selectedLayer;
+  const { conceptIds, daynight } = selectedLayer;
   const { southWest, northEast } = extentCoords;
   const startDate = `${moment.utc(dateSelection).format('YYYY-MM-DD')}T00:00:00.000Z`;
   const endDate = `${moment.utc(dateSelection).format('YYYY-MM-DD')}T23:59:59.999Z`;
   const params = {
-    p: conceptId,
+    p: conceptIds[0],
     '[qt]': `${startDate},${endDate}`,
     m: PROJ_CODES[proj],
     'pg[0][dnf]': daynight !== undefined ? daynight : undefined,

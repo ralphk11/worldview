@@ -16,8 +16,8 @@ function SmartHandoffModal({
 }) {
   // Hides Earthdata Search information by default
   const [showMoreInfo, toggleInfo] = useState(false);
-  const { title, subtitle, conceptId } = selectedLayer;
-  const cmrSearchDetailURL = `https://cmr.earthdata.nasa.gov/search/concepts/${conceptId}.html`;
+  const { title, subtitle, conceptIds } = selectedLayer;
+  const cmrSearchDetailURL = `https://cmr.earthdata.nasa.gov/search/concepts/${conceptIds[0]}.html`;
 
   return (
 

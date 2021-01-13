@@ -27,7 +27,7 @@ import {
   updateBoundaries,
 } from '../modules/image-download/actions';
 
-const DEFAULT_URL = 'http://localhost:3002/api/v1/snapshot';
+const DEFAULT_URL = 'http://geoworldview.ssec.wisc.edu/api/v1/snapshot';
 
 class ImageDownloadContainer extends Component {
   constructor(props) {

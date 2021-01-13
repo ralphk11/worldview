@@ -193,7 +193,7 @@ export default function mapui(models, config, store, ui) {
       }, 100);
     });
     ui.events.on('last-action', subscribeToStore);
-    updateProjection(true);
+    updateProjection(false);
   };
 
   const flyToNewExtent = function(extent, rotation) {

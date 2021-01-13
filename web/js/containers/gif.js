@@ -386,7 +386,7 @@ function mapStateToProps(state, ownProps) {
   const increment = customSelected
     ? `${customDelta} ${timeScaleFromNumberKey[customInterval]}`
     : `1 ${timeScaleFromNumberKey[interval]}`;
-  let url = 'http://localhost:3002/api/v1/snapshot';
+  let url = 'http://geoworldview.ssec.wisc.edu/api/v1/snapshot';
   if (config.features.imageDownload && config.features.imageDownload.url) {
     url = config.features.imageDownload.url;
     util.warn(`Redirecting GIF download to: ${url}`);
